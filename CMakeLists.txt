@@ -47,8 +47,8 @@ endif ()
 include(utility)
 
 # set up option variable for cmake
-option(BUILD_RTTR_DYNAMIC "Build the dynamic/shared version of RTTR library" ON)
-option(BUILD_UNIT_TESTS "Build the unit tests of RTTR" ON)
+option(BUILD_RTTR_DYNAMIC "Build the dynamic/shared version of RTTR library" OFF)
+option(BUILD_UNIT_TESTS "Build the unit tests of RTTR" OFF)
 option(BUILD_STATIC "Build RTTR as static library" ON)
 option(BUILD_WITH_STATIC_RUNTIME_LIBS "Link against the static runtime libraries" ON)
 option(BUILD_WITH_RTTI "Enable build with C++ runtime type information for compilation" ON)
