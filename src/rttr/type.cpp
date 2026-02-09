@@ -32,7 +32,7 @@
 #include "rttr/destructor.h"
 #include "rttr/enumeration.h"
 #include "rttr/method.h"
-#include "rttr/argument.h"
+
 
 #include "rttr/detail/constructor/constructor_wrapper_base.h"
 #include "rttr/detail/destructor/destructor_wrapper_base.h"
@@ -195,6 +195,9 @@ variant type::get_metadata(const variant& key) const
 
 variant type::create(vector<argument> args) const
 {
+    if (args.empty()) {
+        args = std::vector<argument>();
+    }
     auto& ctors = m_type_data->m_class_data.m_ctors;
     for (const auto& ctor : ctors)
     {
