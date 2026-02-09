@@ -99,6 +99,8 @@ if (BUILD_STATIC)
     
     if (MSVC)
         set_target_properties(rttr_core_lib PROPERTIES OUTPUT_NAME librttr_core)
+		set_property(TARGET rttr_core_lib PROPERTY
+               MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
     elseif (CMAKE_COMPILER_IS_GNUCXX)
         set_target_properties(rttr_core_lib PROPERTIES OUTPUT_NAME rttr_core)
     elseif (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
@@ -156,7 +158,8 @@ if (BUILD_WITH_STATIC_RUNTIME_LIBS)
     set_compiler_warnings(rttr_core_s)
 
     if (MSVC)
-        target_compile_options(rttr_core_s PUBLIC "/MT$<$<CONFIG:Debug>:d>")
+        set_property(TARGET rttr_core_lib PROPERTY
+               MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
     elseif(CMAKE_COMPILER_IS_GNUCXX)
         set_target_properties(rttr_core_s PROPERTIES LINK_FLAGS ${GNU_STATIC_LINKER_FLAGS})
     elseif (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
@@ -200,8 +203,9 @@ if (BUILD_WITH_STATIC_RUNTIME_LIBS)
         set_compiler_warnings(rttr_core_lib_s)
 
         if (MSVC)
-            target_compile_options(rttr_core_lib_s PUBLIC "/MT$<$<CONFIG:Debug>:d>")
             set_target_properties(rttr_core_lib PROPERTIES OUTPUT_NAME librttr_core_s)
+			set_property(TARGET rttr_core_lib PROPERTY
+               MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
         elseif(CMAKE_COMPILER_IS_GNUCXX)
             set_target_properties(rttr_core_lib_s PROPERTIES LINK_FLAGS ${GNU_STATIC_LINKER_FLAGS} OUTPUT_NAME rttr_core_s)
         elseif (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
