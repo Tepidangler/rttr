@@ -48,6 +48,7 @@
 #include "rttr/type.h"
 #include "rttr/detail/registration/registration_manager.h"
 #include "rttr/detail/visitor/visitor_registration.h"
+#include "rttr/registration.h"
 
 #include <functional>
 #include <string>
