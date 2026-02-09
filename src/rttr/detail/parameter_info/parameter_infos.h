@@ -30,6 +30,7 @@
 
 #include "rttr/detail/base/core_prerequisites.h"
 #include "rttr/detail/parameter_info/parameter_info_wrapper.h"
+#include "rttr/detail/parameter_info/parameter_names.h"
 #include "rttr/detail/default_arguments/default_arguments.h"
 #include "rttr/parameter_info.h"
 
