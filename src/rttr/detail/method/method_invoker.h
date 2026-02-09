@@ -30,7 +30,7 @@
 
 #include "rttr/detail/misc/function_traits.h"
 #include "rttr/detail/misc/utility.h"
-
+#include "rttr/detail/policies/meth_policies.h"
 namespace rttr
 {
 namespace detail
