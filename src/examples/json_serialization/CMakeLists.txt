@@ -40,7 +40,7 @@ if (USE_PCH)
 endif()
 
 add_executable(json_example ${SRC_FILES} ${HPP_FILES})
-target_link_libraries(json_example RTTR::Core)
+target_link_libraries(json_example RTTR::Core_Lib)
 target_include_directories(json_example PUBLIC ${RAPID_JSON_DIR})
 set_target_properties(json_example PROPERTIES 
                       DEBUG_POSTFIX ${RTTR_DEBUG_POSTFIX}

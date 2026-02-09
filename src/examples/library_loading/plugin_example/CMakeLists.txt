@@ -40,7 +40,7 @@ if (USE_PCH)
 endif()
 
 add_library(plugin_example SHARED ${SRC_FILES} ${HPP_FILES})
-target_link_libraries(plugin_example RTTR::Core)
+target_link_libraries(plugin_example RTTR::Core_Lib)
 set_target_properties(plugin_example PROPERTIES 
                       DEBUG_POSTFIX ${RTTR_DEBUG_POSTFIX}
                       FOLDER "Examples/library_loading"

@@ -40,7 +40,7 @@ if (USE_PCH)
 endif()
 
 add_executable(library_loader_example ${SRC_FILES} ${HPP_FILES})
-target_link_libraries(library_loader_example RTTR::Core)
+target_link_libraries(library_loader_example RTTR::Core_Lib)
 add_dependencies(library_loader_example plugin_example)
 
 set_target_properties(library_loader_example PROPERTIES 

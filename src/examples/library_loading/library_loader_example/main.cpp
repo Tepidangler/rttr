@@ -44,6 +44,10 @@ using namespace rttr;
 
 int main(int argc, char** argv)
 {
+
+    bool is = std::is_trivially_destructible_v<rttr::argument>;
+
+    std::cout << std::boolalpha << is << std::endl;
     library lib(library_name); // load the actual plugin
 
     if (!lib.load())

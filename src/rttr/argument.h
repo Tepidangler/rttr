@@ -81,6 +81,7 @@ public:
     RTTR_INLINE argument(const argument& other) RTTR_NOEXCEPT;
     RTTR_INLINE argument(variant& var) RTTR_NOEXCEPT;
     RTTR_INLINE argument(const variant& var) RTTR_NOEXCEPT;
+    RTTR_INLINE ~argument() RTTR_NOEXCEPT = default;
 
     template<typename T, typename Tp = decay_arg_t<T>>
     RTTR_INLINE argument(const T& data) RTTR_NOEXCEPT;

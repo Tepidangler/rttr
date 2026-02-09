@@ -33,6 +33,7 @@
 
 cmake_minimum_required (VERSION 4.1)
 
+set(CMAKE_CXX_STANDARD 20)
 project ("rttr" LANGUAGES CXX)
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/CMake")
@@ -53,7 +54,7 @@ option(BUILD_STATIC "Build RTTR as static library" ON)
 option(BUILD_WITH_STATIC_RUNTIME_LIBS "Link against the static runtime libraries" OFF)
 option(BUILD_WITH_RTTI "Enable build with C++ runtime type information for compilation" ON)
 option(BUILD_BENCHMARKS "Enable this to build the benchmarks" OFF)
-option(BUILD_EXAMPLES "Enable this to build the examples" OFF)
+option(BUILD_EXAMPLES "Enable this to build the examples" ON)
 option(BUILD_DOCUMENTATION "Enable this to build the documentation" OFF)
 option(BUILD_INSTALLER "Enable this to build the installer" OFF)
 option(BUILD_PACKAGE "Enable this to build the installer" OFF)
