@@ -32,6 +32,7 @@
 #include "rttr/destructor.h"
 #include "rttr/enumeration.h"
 #include "rttr/method.h"
+#include "rttr/argument.h"
 
 #include "rttr/detail/constructor/constructor_wrapper_base.h"
 #include "rttr/detail/destructor/destructor_wrapper_base.h"
