@@ -180,7 +180,8 @@ if (BUILD_WITH_STATIC_RUNTIME_LIBS)
     if (BUILD_STATIC)
         add_library(rttr_core_lib_s STATIC ${UnityBuild} ${SRC_FILES} ${HPP_FILES})
         add_library(RTTR::Core_Lib_STL ALIAS rttr_core_lib_s)
-        
+        set_property(TARGET rttr_core_lib PROPERTY
+               MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
         
 
         target_include_directories(rttr_core_lib_s PUBLIC
@@ -204,8 +205,6 @@ if (BUILD_WITH_STATIC_RUNTIME_LIBS)
 
         if (MSVC)
             set_target_properties(rttr_core_lib PROPERTIES OUTPUT_NAME librttr_core_s)
-			set_property(TARGET rttr_core_lib PROPERTY
-               MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
         elseif(CMAKE_COMPILER_IS_GNUCXX)
             set_target_properties(rttr_core_lib_s PROPERTIES LINK_FLAGS ${GNU_STATIC_LINKER_FLAGS} OUTPUT_NAME rttr_core_s)
         elseif (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
